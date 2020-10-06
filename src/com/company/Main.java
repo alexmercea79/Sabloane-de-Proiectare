@@ -6,7 +6,8 @@ public class Main {
 	// write your code here
         int x,d;
         x=3;
-        d=4
+        d=4;
+        ddddd
 
     }
 }
