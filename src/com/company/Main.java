@@ -4,8 +4,9 @@ public class Main {
 
     public static void main(String[] args) {
 	// write your code here
-        int x;
+        int x,d;
         x=3;
+        d=4
 
     }
 }
