@@ -33,14 +33,13 @@ public class Book {
     }
 
 
-
-    public String getChapter(String indexChapterOne) {
-        chapters.add(indexChapterOne);
-        return createChapter(indexChapterOne);
-    }
-
-
     public String createChapter(String s) {
         return s;
+    }
+
+    public Chapter getChapter(String s) {
+        chapters.add(s);
+        Chapter chapter= new Chapter(s);
+        return chapter;
     }
 }

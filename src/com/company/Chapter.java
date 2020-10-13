@@ -6,17 +6,12 @@ public class Chapter {
     private String name;
     ArrayList<String> subChapters = new ArrayList<String>();
 
-
-    public String getName() {
-        return name;
-    }
-
     public Chapter(String name) {
         this.name = name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getName() {
+        return name;
     }
 
     @Override
@@ -27,13 +22,18 @@ public class Chapter {
                 '}';
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String createSubChapter(String s) {
+        return s;
+    }
 
     public SubChapter getSubChapter(String indexSubChapterOneOne) {
         subChapters.add(indexSubChapterOneOne);
-        return createSubChapter(indexSubChapterOneOne);
-    }
+        SubChapter chapter=new SubChapter(indexSubChapterOneOne);
 
-    public SubChapter createSubChapter(String s) {
-        return s;
+        return chapter;
     }
 }
