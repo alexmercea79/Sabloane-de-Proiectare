@@ -3,21 +3,16 @@ package com.company;
 import java.util.ArrayList;
 
 public class Book {
-    private String title;
-    ArrayList<Author> authors= new ArrayList<Author>();
-    ArrayList<String> chapters = new ArrayList<String>();
+    private final String title;
+    ArrayList<Author> authors= new ArrayList<>();
+    ArrayList<String> chapters = new ArrayList<>();
 
     public Book(String title) {
         this.title = title;
     }
 
-    public String getTitle() {
-        return title;
-    }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
+
 
     @Override
     public String toString() {
@@ -39,7 +34,6 @@ public class Book {
 
     public Chapter getChapter(String s) {
         chapters.add(s);
-        Chapter chapter= new Chapter(s);
-        return chapter;
+        return new Chapter(s);
     }
 }
