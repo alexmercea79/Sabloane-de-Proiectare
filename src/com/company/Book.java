@@ -6,12 +6,11 @@ public class Book {
     private final String title;
     ArrayList<Author> authors= new ArrayList<>();
     ArrayList<String> chapters = new ArrayList<>();
+    public ArrayList<Element> content = new ArrayList<>();
 
     public Book(String title) {
         this.title = title;
     }
-
-
 
 
     @Override
@@ -20,6 +19,7 @@ public class Book {
                 "title='" + title + '\'' +
                 ", authors=" + authors +
                 ", chapters=" + chapters +
+                ", content=" + content +
                 '}';
     }
 
@@ -36,4 +36,21 @@ public class Book {
         chapters.add(s);
         return new Chapter(s);
     }
-}
+
+
+
+
+    public void addContent(Element e)
+    {
+        content.add(e);
+    }
+
+    public void print()
+    {
+        System.out.println("Book:" + title);
+        System.out.println("Author:" + authors);
+        for(Element e: content)
+        {
+            e.print();
+        }
+}}
