@@ -33,7 +33,7 @@ public class Section implements Element{
     public void print()
     {
         System.out.println(title);
-        for(Element e:content)
+        for(Element e:this.content)
         {
             e.print();
         }
