@@ -1,4 +1,6 @@
-package com.company;
+package services;
+
+import models.Paragraph;
 
 public class AlignCenter implements AlignStrategy {
     public void render(Paragraph paragraph) {

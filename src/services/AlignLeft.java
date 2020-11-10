@@ -1,7 +1,9 @@
-package com.company;
+package services;
 
 
-    public class AlignLeft implements AlignStrategy{
+import models.Paragraph;
+
+public class AlignLeft implements AlignStrategy {
         public void render(Paragraph paragraph){
             System.out.println("+++++" + paragraph.getName());
         }

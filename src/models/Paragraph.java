@@ -1,6 +1,9 @@
-package com.company;
+package models;
 
-public class Paragraph implements Element{
+import models.Element;
+import services.AlignStrategy;
+
+public class Paragraph implements Element {
     private String title;
     private String name;
     private AlignStrategy alignStrategy;
@@ -30,5 +33,9 @@ public class Paragraph implements Element{
     }
     public void setAlignStrategy(AlignStrategy alignStrategy) {
         this.alignStrategy = alignStrategy;
+    }
+    public void accept(Visitor visitor)
+    {
+        visitor.visit(this);
     }
 }

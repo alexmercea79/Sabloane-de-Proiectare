@@ -1,4 +1,6 @@
-package com.company;
+package services;
+
+import models.Paragraph;
 
 public class AlignRight implements AlignStrategy {
     public Paragraph paragraph;

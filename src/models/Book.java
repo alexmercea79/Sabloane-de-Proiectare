@@ -1,4 +1,5 @@
-package com.company;
+package models;
+
 
 import java.util.ArrayList;
 
@@ -32,10 +33,6 @@ public class Book {
         return s;
     }
 
-    public Chapter getChapter(String s) {
-        chapters.add(s);
-        return new Chapter(s);
-    }
 
 
 

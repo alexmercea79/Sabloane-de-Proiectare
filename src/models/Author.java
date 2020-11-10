@@ -1,4 +1,4 @@
-package com.company;
+package models;
 
 public class Author {
     private final String name;
