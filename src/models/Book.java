@@ -1,53 +1,45 @@
 package models;
 
-
 import java.util.ArrayList;
 
-public class Book {
-    private final String title;
-    ArrayList<Author> authors= new ArrayList<>();
-    ArrayList<String> chapters = new ArrayList<>();
-    public ArrayList<Element> content = new ArrayList<>();
+public class Book{
 
-    public Book(String title) {
-        this.title = title;
+    private String title;
+    private ArrayList<Element> content = new ArrayList<>();
+    private ArrayList<Author> authors = new ArrayList<>();
+
+    public Book(String title){
+        this.title=title;
     }
 
-
-    @Override
-    public String toString() {
-        return "Book{" +
-                "title='" + title + '\'' +
-                ", authors=" + authors +
-                ", chapters=" + chapters +
-                ", content=" + content +
-                '}';
+    public void addContent(Element elm){
+        content.add(elm);
     }
 
-    public void addAuthor(Author s) {
-        authors.add(s);
+    public void addAuthor(Author author){
+        authors.add(author);
     }
 
-
-    public String createChapter(String s) {
-        return s;
-    }
-
-
-
-
-
-    public void addContent(Element e)
-    {
-        content.add(e);
-    }
-
-    public void print()
-    {
-        System.out.println("Book:" + title);
-        System.out.println("Author:" + authors);
-        for(Element e: content)
-        {
-            e.print();
+    public void print(){
+        System.out.println("models.Book title: "+this.title);
+        printAuthors();
+        for(Element i:content){
+            i.print();
         }
-}}
+    }
+
+    private void printAuthors(){
+        for (Author i: authors){
+            i.print();
+        }
+    }
+
+    public void accept(Visitor v) {
+
+        v.visit(this);
+        for (Element i:content){
+            i.accept(v);
+        }
+    }
+
+}

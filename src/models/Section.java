@@ -1,46 +1,41 @@
 package models;
-import models.Element;
 
 import java.util.ArrayList;
 
-public class Section implements Element
+public class Section implements Element{
 
-{
-    protected String title;
-    ArrayList<Element> sectiune = new ArrayList<>();
+    protected String sectionTitle;
+    protected ArrayList<Element> content = new ArrayList<>();
 
-
-    public Section(String t)
-    {
-        this.title=t;
+    public Section(String sectionTitle){
+        this.sectionTitle=sectionTitle;
     }
 
-    public void add(Element e)
-    {
-        sectiune.add(e);
+    public int add(Element elm){
+        content.add(elm);
+        return content.indexOf(elm);
     }
 
-    public Element getElemet(int index )
-    {
-        return sectiune.get(index);
-    }
+    public void accept(Visitor v) {
 
-    public void print()
-    {
-        System.out.println("Sectiune: " + title );
-        for(Element e: sectiune)
-        {
-            e.print();
+        v.visit(this);
+        for (Element i:content){
+            i.accept(v);
         }
     }
-    public void accept(Visitor visitor)
-    {
-        for(Element e: sectiune)
-            e.accept(visitor);
+
+    public void remove(Element elm){
+        content.remove(elm);
     }
 
-    public void remove(Element e)
-    {
-        sectiune.remove(e);
+    public Element getElement(int index){
+        return content.get(index);
+    }
+
+    public void print(){
+        System.out.println("models.Section: "+this.sectionTitle);
+        for(Element i : content){
+            i.print();
+        }
     }
 }

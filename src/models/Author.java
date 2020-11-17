@@ -1,15 +1,15 @@
 package models;
 
 public class Author {
-    private final String name;
 
-    public Author(String name) {
-        this.name = name;
+    private String name;
+
+    public Author(String name){
+        this.name=name;
     }
 
-
-    @Override
-    public String toString() {
-        return name;
+    public void print(){
+        System.out.println("models.Author: "+this.name);
     }
+
 }
